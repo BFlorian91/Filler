@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/12 07:27:25 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/12 12:05:51 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRCS =	ft_buffer.c \
 	ft_printf.c \
 	ft_str_to_buff.c \
 	ft_width.c \
-	ft_intlen.c \
 	ft_get_nbr.c \
 	ft_get_unbr.c \
 	ft_get_color.c \
@@ -27,6 +26,9 @@ SRCS =	ft_buffer.c \
 	ft_precision.c \
 	ft_get_float.c \
 	ft_ftoa.c \
+	pf_utoa.c \
+	pf_intlen.c \
+	pf_itoa.c \
 	pf_c.c \
 	pf_s.c \
 	pf_p.c \
@@ -37,24 +39,8 @@ SRCS =	ft_buffer.c \
 	pf_percentage.c \
 	pf_f.c \
 	pf_b.c \
-	./lib_utils/ft_atoi.c \
-	./lib_utils/ft_itoa.c \
-	./lib_utils/ft_utoa.c \
-	./lib_utils/ft_bzero.c \
-	./lib_utils/ft_isdigit.c \
-	./lib_utils/ft_strjoin.c \
-	./lib_utils/ft_memset.c \
-	./lib_utils/ft_putstr.c \
-	./lib_utils/ft_strcmp.c \
-	./lib_utils/ft_strdel.c \
-	./lib_utils/ft_strdup.c \
-	./lib_utils/ft_strlen.c \
-	./lib_utils/ft_memdel.c \
-	./lib_utils/ft_strnew.c \
-	./lib_utils/ft_strrev.c \
-	./lib_utils/ft_memalloc.c \
-	./lib_utils/ft_toupper.c
 
+LIB = ../../libft.a
 
 OBJ = $(SRCS:.c=.o)
 
@@ -70,7 +56,7 @@ YELLOW = \033[1;33m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(LIB)
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
 	@cp libftprintf.a ../../

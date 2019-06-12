@@ -6,7 +6,7 @@
 /*   By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 15:12:06 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/05/22 17:15:12 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:26:38 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "get_next_line.h"
+# include "../personal-funcs/ft_printf/ft_printf.h"
 
 typedef struct			s_list
 {

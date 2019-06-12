@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:48:15 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/10 11:25:22 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/12 10:53:21 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-char	*ft_itoa(long long int n);
+char	*pf_itoa(long long int n);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memalloc(size_t size);

@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 18:22:40 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/10 11:39:41 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/12 10:54:17 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int			pf_u(va_list ap, t_data *data, t_buff *buff)
 	char					*str;
 
 	nbr = ft_get_unbr(ap, data);
-	if ((str = ft_itoa(nbr)) == NULL)
+	if ((str = pf_itoa(nbr)) == NULL)
 		return (-1);
 	if (data->flags[width] <= (int)ft_strlen(str))
 		data->flags[width] = 0;

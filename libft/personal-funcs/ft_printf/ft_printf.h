@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 09:28:29 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/11 11:35:05 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/12 11:31:37 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "./lib_utils/lib_utils.h"
+# include "../../includes/libft.h"
 
 # define FLAGS_NB 9
 # define NB_CONV 12
@@ -53,18 +54,14 @@ typedef struct			s_data
 	char		conv;
 }						t_data;
 
-void					ft_bzero(void *s, size_t n);
-int						ft_strcmp(const char *s1, const char *s2);
-int						ft_isdigit(int c);
 int						ft_printf(const char *format, ...);
 int						ft_parse(const char *str, t_data *data, int index,
 		t_buff *buff);
 void					ft_buffer(char c, t_buff *buff);
+char					*pf_utoa(unsigned long long nb);
 void					ft_str_to_buff(char *str, t_buff *buff);
 char					*ft_itoa_base(long long int nb, int base);
 char					*ft_utoa_base(unsigned long long nb, int base);
-int						ft_intlen(long long nb);
-void					ft_putstr(char *str);
 void					ft_flags_display(int neg, t_data *data, t_buff *buff);
 int						pf_c(va_list ap, t_data *data, t_buff *buff);
 int						pf_s(va_list ap, t_data *data, t_buff *buff);

@@ -6,7 +6,7 @@
 /*   By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 19:52:30 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/01/08 17:53:28 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/12 11:10:54 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int			cut_line(char **s, char **line, int fd)
 
 int			read_files(int fd, char **s, int ret)
 {
-	char		buff[BUFF_SIZE + 1];
+	char		buff[BUFFY_SIZE + 1];
 	char		*tmp;
 
-	while ((ret = read(fd, &buff, BUFF_SIZE)) > 0)
+	while ((ret = read(fd, &buff, BUFFY_SIZE)) > 0)
 	{
 		buff[ret] = '\0';
 		if (!(tmp = ft_strjoin(s[fd], buff)))
@@ -64,7 +64,7 @@ int			get_next_line(int fd, char **line)
 
 	ret = 1;
 	len = 0;
-	if (line == NULL || fd < 0 || fd > MAX_FD || BUFF_SIZE < 1)
+	if (line == NULL || fd < 0 || fd > MAX_FD || BUFFY_SIZE < 1)
 		return (-1);
 	if (!s[fd])
 		if (!(s[fd] = ft_strnew(1)))

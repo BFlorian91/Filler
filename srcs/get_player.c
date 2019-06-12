@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filler.h                                           :+:      :+:    :+:   */
+/*   get_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/12 15:34:25 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/06/12 07:49:42 by flbeaumo          #+#    #+#             */
+/*   Updated: 2019/06/12 16:53:33 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLER_H
-# define FILLER_H
+#include "../incs/filler.h"
+#include <unistd.h>
 
-#include "../libft/includes/libft.h"
-
-typedef struct		s_filler
+int get_players(t_filler *datas)
 {
-	int	player;
-	char	letter_me;
-	char	letter_enemy;
-	int	map_width;
-	int 	map_height;
-	char	**map;
-	char	*buffer;
-}			t_filler;
-
-int			 get_players(t_filler *datas);
-
-#endif
+	if (ft_strstr(datas->buffer, "$$$ exec p1 : [players/a.out]"))
+	{
+		datas->player = 1;
+		datas->letter_me = 'O';
+		datas->letter_enemy = 'X';
+	}
+	else
+	{
+		datas->player = 2;
+		datas->letter_me = 'X';
+		datas->letter_enemy = '0';
+	}
+	return (1);
+}
