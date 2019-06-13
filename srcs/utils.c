@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filler.h                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/13 14:40:55 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/06/13 14:21:29 by flbeaumo          #+#    #+#             */
+/*   Updated: 2019/06/13 15:46:05 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLER_H
-# define FILLER_H
+#include "../incs/filler.h"
 
-#include "../libft/includes/libft.h"
-
-typedef struct		s_filler
+int		get_number(char *str)
 {
-	int	player;
-	char	letter_me;
-	char	letter_enemy;
-	int	map_width;
-	int 	map_height;
-	char	**map;
-	char	buffer[4096];
-}			t_filler;
+	int		value;
+	int		i;
 
-int			get_players(t_filler *datas);
-int			get_map(t_filler *datas);
-int			get_number(char *str);
-
-#endif
+	value = 0;
+	i = 0;
+	if (str[i] != ' ')
+	{
+		while (ft_isdigit(str[i]))
+		{
+			value = value * 10 + str[i] - 48;
+			++i;
+		}
+	}
+	return (value);
+}

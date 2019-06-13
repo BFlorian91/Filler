@@ -1,0 +1,2 @@
+./filler_vm -f maps/map00 -p1 ./flbeaumo.filler -p2 players/hcao.filler 1> /dev/null
+gcc -o flbeaumo.filler ../srcs/get_player.c ../libft/libft.a ../libft/libftprintf.a ../srcs/utils.c ../srcs/main.c
