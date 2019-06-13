@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/13 14:40:55 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/13 20:01:40 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define FILLER_H
 
 #include "../libft/includes/libft.h"
+
+# define NBR(x) ft_putnbr_fd(x, 2)
+# define STR(x) ft_putstr_fd(x, 2)
+# define CHAR(x) ft_putchar_fd(x, 2)
+# define BACKN ft_putchar_fd('\n', 2)
+
 
 typedef struct		s_filler
 {
@@ -28,6 +34,6 @@ typedef struct		s_filler
 
 int			get_players(t_filler *datas);
 int			get_map(t_filler *datas);
-int			get_number(char *str);
+int			get_number(char *str, int *i);
 
 #endif

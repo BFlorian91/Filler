@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_player.c                                       :+:      :+:    :+:   */
+/*   get_datas.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/12 07:49:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/13 15:48:53 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
+/*   Updated: 2019/06/13 19:58:37 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,9 @@ int	get_map(t_filler *datas)
 	ft_strcpy(tmp, ft_strstr(datas->buffer, "Plateau "));
 	while (!ft_isdigit(tmp[i]))
 		++i;
-	datas->map_width = get_number(&tmp[i]);
+	datas->map_width = get_number(tmp, &i);
 	while (!ft_isdigit(tmp[i]))
 		++i;
-	datas->map_height = get_number(&tmp[i + 3]);  // pas BON ! i + 3 si 100?
+	datas->map_height = get_number(tmp, &i);
 	return (1);
 }
-
-
-
-	/*ft_putnbr_fd(datas->map_height, 2);*/
-	/*ft_putstr_fd("CHARACTER\n", 2);*/
-	/*ft_putchar_fd(tmp[i], 2);*/
-	/*write(1, "\n", 2);*/
