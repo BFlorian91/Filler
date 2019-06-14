@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/13 19:58:37 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/14 10:05:57 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ int get_players(t_filler *datas)
 		datas->letter_me = 'X';
 		datas->letter_enemy = '0';
 	}
+	return (1);
+}
+
+static int parsing_map(t_filler *datas)
+{
+	int 	i;
+	char	tmp[4096];
+
+	ft_strcpy(tmp, ft_strstr(datas->buffer, "000"));
+
 	return (1);
 }
 
