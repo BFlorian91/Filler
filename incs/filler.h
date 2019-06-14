@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/13 20:01:40 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:23:59 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int			get_players(t_filler *datas);
 int			get_map(t_filler *datas);
 int			get_number(char *str, int *i);
 
+void			print_board(t_filler *datas);
 #endif

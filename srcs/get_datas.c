@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/14 10:05:57 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:08:30 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,38 @@ int get_players(t_filler *datas)
 static int parsing_map(t_filler *datas)
 {
 	int 	i;
+	int		j;
+	int		x;
+	int 	y;
 	char	tmp[4096];
 
+	i = 0;
+	j = 0;
+	y = 0;
 	ft_strcpy(tmp, ft_strstr(datas->buffer, "000"));
-
+	if (!(datas->map = (char **)malloc(sizeof(char *) * (y + 1))))
+		return (-1);
+	while (y < datas->map_height)
+	{
+		x = 0;
+		while (j < 5)
+			++j;
+		i += j;
+		j = 0;
+		if (!(datas->map[y] = (char *)malloc(sizeof(char) * (x + 1))))
+				return (-1);
+		ft_bzero(datas->map[y], datas->map_width);
+		while (x < datas->map_width)
+		{
+			datas->map[y][x] = tmp[i];
+			++x;
+			++i;
+		}
+		datas->map[y][x] = '\0';
+		++y;
+	}
+	datas->map[y] = 0;
+	print_board(datas);
 	return (1);
 }
 
@@ -54,5 +82,6 @@ int	get_map(t_filler *datas)
 	while (!ft_isdigit(tmp[i]))
 		++i;
 	datas->map_height = get_number(tmp, &i);
+	parsing_map(datas);
 	return (1);
 }
