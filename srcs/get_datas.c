@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/15 10:17:10 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/19 14:44:04 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,56 +29,36 @@ int get_players(t_filler *datas)
 	return (1);
 }
 
-static int parsing_map(t_filler *datas)
-{
-	int 	i;
-	int		x;
-	int 	y;
-	char	tmp[4096];
-
-	i = 0;
-	y = 0;
-	ft_strcpy(tmp, ft_strstr(datas->buffer, "000"));
-	if (!(datas->map = (char **)malloc(sizeof(char *) * (datas->map_height + 1))))
-		return (-1);
-	datas->map[15] = 0;
-	while (y < datas->map_height)
-	{
-		x = 0;
-		if (!(datas->map[y] = (char *)malloc(sizeof(char) * (datas->map_width + 1))))
-				return (-1);
-		ft_bzero(datas->map[y], datas->map_width);
-		while (ft_isdigit(tmp[i]) || tmp[i] == ' ')
-			++i;
-		while (x < datas->map_width)
-		{
-			datas->map[y][x] = tmp[i];
-			++x;
-			++i;
-		}
-		datas->map[y][x] = '\0';
-		++y;
-	}
-	
-	print_board(datas);
-	return (1);
-}
 
 int	get_map(t_filler *datas)
 {
 	int 	i;
-	char	tmp[4096];
-	int		value;
+	char	tmp[B_SIZE];
 
 	i = 0;
-	value = 0;
+	NBR(i);
 	ft_strcpy(tmp, ft_strstr(datas->buffer, "Plateau "));
-	while (!ft_isdigit(tmp[i]))
-		++i;
+	skip_spaces(tmp, &i);
+	NBR(i);
 	datas->map_height = get_number(tmp, &i);
-	while (!ft_isdigit(tmp[i]))
-		++i;
+	skip_spaces(tmp, &i);
 	datas->map_width = get_number(tmp, &i);
 	parsing_map(datas);
+	return (1);
+}
+
+int	get_pieces(t_filler *datas)
+{
+	int		i;
+	char	tmp[B_SIZE];
+
+	i = 0;
+	if (ft_strstr(datas->buffer, "Piece"))
+		ft_strcpy(tmp, ft_strstr(datas->buffer, "Piece"));
+	skip_spaces(tmp, &i);
+	datas->piece_height = get_number(tmp, &i);
+	skip_spaces(tmp, &i);
+	datas->piece_width = get_number(tmp, &i);
+	parsing_pieces(datas, tmp);
 	return (1);
 }

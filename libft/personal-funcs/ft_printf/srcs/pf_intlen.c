@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   pf_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:33:31 by florian           #+#    #+#             */
-/*   Updated: 2019/06/17 11:03:53 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/05/24 12:22:15 by flbeaumo          #+#    #+#             */
+/*   Updated: 2019/06/17 08:00:31 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../incs/ft_printf.h"
 
-# define BUFFY_SIZE 4096
-# define MAX_FD 4864
-# include "libft.h"
-# include <unistd.h>
-# include <fcntl.h>
+int		pf_intlen(long long nb)
+{
+	int	count;
 
-int			get_next_line(const int fd, char **line);
-
-#endif
+	count = 0;
+	while (nb)
+	{
+		++count;
+		nb /= 10;
+	}
+	return (count);
+}

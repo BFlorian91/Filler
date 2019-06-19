@@ -6,41 +6,58 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/12 12:05:51 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/16 21:35:20 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a 
 
-SRCS =	ft_buffer.c \
-	ft_dispatcher.c \
-	ft_parse.c \
-	ft_printf.c \
-	ft_str_to_buff.c \
-	ft_width.c \
-	ft_get_nbr.c \
-	ft_get_unbr.c \
-	ft_get_color.c \
-	ft_itoa_base.c \
-	reverse_base.c \
-	ft_precision.c \
-	ft_get_float.c \
-	ft_ftoa.c \
-	pf_utoa.c \
-	pf_intlen.c \
-	pf_itoa.c \
-	pf_c.c \
-	pf_s.c \
-	pf_p.c \
-	pf_d.c \
-	pf_o.c \
-	pf_u.c \
-	pf_x.c \
-	pf_percentage.c \
-	pf_f.c \
-	pf_b.c \
+SRCS =	./srcs/ft_buffer.c \
+	./srcs/ft_dispatcher.c \
+	./srcs/ft_parse.c \
+	./srcs/ft_printf.c \
+	./srcs/ft_str_to_buff.c \
+	./srcs/ft_width.c \
+	./srcs/ft_intlen.c \
+	./srcs/ft_get_nbr.c \
+	./srcs/ft_get_unbr.c \
+	./srcs/ft_get_color.c \
+	./srcs/ft_itoa_base.c \
+	./srcs/reverse_base.c \
+	./srcs/ft_precision.c \
+	./srcs/ft_get_float.c \
+	./srcs/ft_ftoa.c \
+	./srcs/pf_c.c \
+	./srcs/pf_s.c \
+	./srcs/pf_p.c \
+	./srcs/pf_d.c \
+	./srcs/pf_o.c \
+	./srcs/pf_u.c \
+	./srcs/pf_x.c \
+	./srcs/pf_percentage.c \
+	./srcs/pf_f.c \
+	./srcs/pf_b.c \
+	./lib_utils/pf_itoa.c \
+	./lib_utils/ft_utoa.c \
+	../../ft_atoi.c \
+	../../ft_bzero.c \
+	../../ft_isdigit.c \
+	../../ft_strjoin.c \
+	../../ft_memset.c \
+	../../ft_putstr.c \
+	../../ft_strcmp.c \
+	../../ft_strdel.c \
+	../../ft_strdup.c \
+	../../ft_strlen.c \
+	../../ft_memdel.c \
+	../../ft_strnew.c \
+	../../ft_strrev.c \
+	../../ft_memalloc.c \
+	../../ft_toupper.c 
 
-LIB = ../../libft.a
+SRCS_PATH = srcs
+
+HEADER_PATH = ./incs
 
 OBJ = $(SRCS:.c=.o)
 
@@ -56,15 +73,14 @@ YELLOW = \033[1;33m
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIB)
+$(NAME): $(OBJ)
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
-	@cp libftprintf.a ../../
-	@echo "\033[2A $(GREEN) [ Compile status ]		 [OK] $(NC)"
 
 %.o: %.c 
 	@$(CC) -o $@ -c $< $(CFLAGS)
-	@echo "\033[1A $(YELLOW)Compiling:$(BLUE) $< \033[K 	$(GREEN) [OK] $(NC)"
+	@echo "$(GREEN) [OK] $(YELLOW)Compiling:$(BLUE) $< 	$(NC)"
+
 
 clean:
 	@rm -rf $(OBJ)
@@ -73,3 +89,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: clean all re fclean

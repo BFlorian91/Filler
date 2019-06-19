@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_str_to_buff.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:33:31 by florian           #+#    #+#             */
-/*   Updated: 2019/06/17 11:03:53 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/05/19 08:59:29 by sgury             #+#    #+#             */
+/*   Updated: 2019/06/16 20:07:37 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../incs/ft_printf.h"
 
-# define BUFFY_SIZE 4096
-# define MAX_FD 4864
-# include "libft.h"
-# include <unistd.h>
-# include <fcntl.h>
-
-int			get_next_line(const int fd, char **line);
-
-#endif
+void	ft_str_to_buff(char *str, t_buff *buff)
+{
+	while (*str != '\0')
+	{
+		ft_buffer(*str, buff);
+		str++;
+	}
+}

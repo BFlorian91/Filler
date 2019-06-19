@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/14 13:23:59 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/19 14:37:43 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,31 @@
 # define CHAR(x) ft_putchar_fd(x, 2)
 # define BACKN ft_putchar_fd('\n', 2)
 
+# define B_SIZE 4096
+
 
 typedef struct		s_filler
 {
-	int	player;
-	char	letter_me;
-	char	letter_enemy;
-	int	map_width;
-	int 	map_height;
-	char	**map;
-	char	buffer[4096];
+	char		buffer[4096];
+	int		player;
+	char		letter_me;
+	char		letter_enemy;
+	unsigned int	map_width;
+	unsigned int 	map_height;
+	char		**map;
+	unsigned int	piece_width;
+	unsigned int	piece_height;
+	char		**piece;
+
 }			t_filler;
 
 int			get_players(t_filler *datas);
 int			get_map(t_filler *datas);
 int			get_number(char *str, int *i);
 
-void			print_board(t_filler *datas);
+int			parsing_map(t_filler *datas);
+int			parsing_pieces(t_filler *datas, char tmp[B_SIZE]);
+
+void			print_board(char **str);
+void			skip_spaces(char *str, int *i);
 #endif

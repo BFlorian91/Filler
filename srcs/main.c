@@ -6,13 +6,13 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:43:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/14 13:22:45 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/19 14:44:15 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/filler.h"
 
-int		main(int ac, char **av)
+int		main(void)
 {
 	t_filler	*datas;
 	char		*line;
@@ -27,7 +27,8 @@ int		main(int ac, char **av)
 		ft_strcat(datas->buffer, line);
 		ft_strdel(&line);
 	}
-	get_players(datas);
+
+	/*get_players(datas);*/
 	get_map(datas);
 	STR("\nflbeaumo: Player ");
 	NBR(datas->player);
