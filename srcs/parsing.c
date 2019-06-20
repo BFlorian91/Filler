@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/19 14:39:53 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/20 11:23:35 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,25 @@ int parsing_map(t_filler *datas)
 		datas->map[y][x] = '\0';
 		++y;
 	}
-	
+	/* DEBUG */
+	STR("THE MAP PARSE:\n");
 	print_board(datas->map);
+	/* END */
 	/*ft_strdel(&tmp);*/
 	return (1);
 }
 
-int	parsing_pieces(t_filler *datas, char tmp[B_SIZE])
+int	parsing_pieces(t_filler *datas)
 {
 	int 			i;
 	unsigned int	x;
 	unsigned int	y;
+	char			tmp[B_SIZE];
 
 	i = 0;
 	y = 0;
+	if (ft_strstr(datas->buffer, "Piece"))
+		ft_strcpy(tmp, ft_strstr(datas->buffer, "Piece"));
 	if (!(datas->piece = (char **)malloc(sizeof(char *) * (datas->piece_height + 1))))
 		return (-1);
 	datas->piece[datas->piece_height] = 0;
@@ -68,7 +73,7 @@ int	parsing_pieces(t_filler *datas, char tmp[B_SIZE])
 		if (!(datas->piece[y] = (char *)malloc(sizeof(char) * (datas->piece_width + 1))))
 			return (-1);
 		ft_bzero(datas->piece[y], datas->piece_height);
-		while (tmp[i] == ':' || tmp[i] == ' ' || ft_isdigit(tmp[i]))
+		while (ft_isalpha(tmp[i]) || tmp[i] == ':' || ft_isdigit(tmp[i]) || tmp[i] == ' ')
 			++i;
 		while (x < datas->piece_width)
 		{
@@ -79,6 +84,13 @@ int	parsing_pieces(t_filler *datas, char tmp[B_SIZE])
 		datas->piece[y][x] = '\0';
 		++y;
 	}
+	/* DEBUG */
+	STR("\n\nTHE PIECE PARSE: ");
+	NBR(datas->piece_height);
+	CHAR(' ');
+	NBR(datas->piece_width);
+	CHAR('\n');
 	print_board(datas->piece);
+	/* END */
 	return (1);
 }

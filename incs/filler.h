@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/19 14:37:43 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/20 10:53:45 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ typedef struct		s_filler
 int			get_players(t_filler *datas);
 int			get_map(t_filler *datas);
 int			get_number(char *str, int *i);
+int			get_pieces(t_filler *datas);
 
 int			parsing_map(t_filler *datas);
-int			parsing_pieces(t_filler *datas, char tmp[B_SIZE]);
+int			parsing_pieces(t_filler *datas);
 
 void			print_board(char **str);
 void			skip_spaces(char *str, int *i);
