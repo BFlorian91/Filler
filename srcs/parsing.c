@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/20 11:23:35 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/23 16:25:00 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int parsing_map(t_filler *datas)
 	i = 0;
 	y = 0;
 	ft_strcpy(tmp, ft_strstr(datas->buffer, "000"));
-	/*if (!(tmp = ft_strdup(ft_strstr(datas->buffer, "000"))))*/
-		/*return (-1);*/
 	if (!(datas->map = (char **)malloc(sizeof(char *) * (datas->map_height + 1))))
 		return (-1);
 	datas->map[datas->map_height] = 0;
@@ -46,8 +44,8 @@ int parsing_map(t_filler *datas)
 		++y;
 	}
 	/* DEBUG */
-	STR("THE MAP PARSE:\n");
-	print_board(datas->map);
+	/*STR("THE MAP PARSE:\n");*/
+	/*print_board(datas->map);*/
 	/* END */
 	/*ft_strdel(&tmp);*/
 	return (1);
@@ -85,12 +83,19 @@ int	parsing_pieces(t_filler *datas)
 		++y;
 	}
 	/* DEBUG */
-	STR("\n\nTHE PIECE PARSE: ");
-	NBR(datas->piece_height);
-	CHAR(' ');
-	NBR(datas->piece_width);
-	CHAR('\n');
-	print_board(datas->piece);
+	/*STR("\n\nTHE PIECE PARSE: ");*/
+	/*NBR(datas->piece_height);*/
+	/*CHAR(' ');*/
+	/*NBR(datas->piece_width);*/
+	/*CHAR('\n');*/
+	/*print_board(datas->piece);*/
 	/* END */
+	return (1);
+}
+
+int	get_current_piece(t_filler *datas)
+{
+	if (!(datas->pos = (t_pos *)malloc(sizeof(datas->piece_width))))
+		return (-1);
 	return (1);
 }

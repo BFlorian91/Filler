@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/20 10:53:45 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/23 16:22:56 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,15 @@
 
 # define B_SIZE 4096
 
+typedef struct		s_pos
+{
+	int x;
+	int y;
+}			t_pos;
 
 typedef struct		s_filler
 {
-	char		buffer[4096];
+	char		buffer[B_SIZE];
 	int		player;
 	char		letter_me;
 	char		letter_enemy;
@@ -35,6 +40,7 @@ typedef struct		s_filler
 	unsigned int	piece_width;
 	unsigned int	piece_height;
 	char		**piece;
+	t_pos		*pos;
 
 }			t_filler;
 
