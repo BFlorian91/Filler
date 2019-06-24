@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/23 16:25:00 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/23 17:14:30 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int	get_current_piece(t_filler *datas)
 {
 	if (!(datas->pos = (t_pos *)malloc(sizeof(datas->piece_width))))
 		return (-1);
+	
 	return (1);
 }

@@ -6,17 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 14:21:29 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/20 10:32:46 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/23 17:14:37 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/filler.h"
-
-void	skip_spaces(char *str, int *i)
-{
-	while (!ft_isdigit(str[*i]))
-		++i;
-}
 
 int		get_number(char *str, int *i)
 {
