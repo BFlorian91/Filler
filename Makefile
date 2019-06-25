@@ -6,14 +6,14 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/21 13:58:59 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/25 23:40:45 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = flbeaumo.filler
 
 SRCS = $(addprefix ./srcs/, \
-       get_datas.c main.c utils.c parsing.c\
+       get_datas.c main.c utils.c parsing.c solving.c \
 )
 
 HEADER_PATH = ./incs/

@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:43:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/21 14:02:19 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/25 23:42:26 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ int		main(void)
 	get_players(datas);
 	get_map(datas);
 	get_pieces(datas);
-	STR("\nflbeaumo: Player ");
-	NBR(datas->player);
-	STR("\nflbeaumo letter: ");
-	CHAR(datas->letter_me);
-	CHAR('\n');
-	STR("Map x: ");
-	NBR(datas->map_width);
-	BACKN;
-	STR("Map y: ");
-	NBR(datas->map_height);
-	CHAR('\n');
+	place(datas);
+	/*STR("\nflbeaumo: Player ");*/
+	/*NBR(datas->player);*/
+	/*STR("\nflbeaumo letter: ");*/
+	/*CHAR(datas->letter_me);*/
+	/*CHAR('\n');*/
+	/*STR("Map x: ");*/
+	/*NBR(datas->map_width);*/
+	/*BACKN;*/
+	/*STR("Map y: ");*/
+	/*NBR(datas->map_height);*/
+	/*CHAR('\n');*/
 	return (0);
 }

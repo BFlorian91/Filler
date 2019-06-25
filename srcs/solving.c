@@ -6,13 +6,13 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 12:35:39 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/24 20:40:13 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/25 23:45:48 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/filler.h"
 
-int		check_older_pieces(t_filler *datas, int *x, int *y)
+int		check_first_pieces(t_filler *datas, int *x, int *y)
 {
 	while (datas->map[*y] && datas->map[*y][*x] != datas->letter_me)
 	{
@@ -28,59 +28,49 @@ int		check_older_pieces(t_filler *datas, int *x, int *y)
 
 int		can_place(t_filler *datas, int x, int y)
 {
-	int i;
-	int j;
-	int k;
-	int l;
+	unsigned int i;
+	unsigned int j;
+	bool me;
 
-	i = 0;
 	j = 0;
-	k = 0;
-	l = 0;
-	while (datas->map[y][x] != datas->letter_me)
+	me = 0;
+	while (j < datas->piece_width)
 	{
-		++x;
-		if (datas->map[y][x] == '\0')
+		i = 0;
+		while (i < datas->piece_height)
 		{
-			x = 0;
-			++y;
+			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_enemy)
+				return (0);
+			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_me)
+				++me;
+			++i;
 		}
+		++j;
 	}
-	while (datas->piece[k][l])
-	{
-		while (y + l < datas->map_width && l < datas->piece_width)
-		{
-			++l;
-			if (datas->piece[k][l] == '*')
-				++y;
-		}
-		if ((l == datas->piece_width || datas->piece[k][l] == '*')
-				&& i < datas->map_height && k < datas->piece_height)
-		{
-			l = 0;
-			++k;
-			x += k;
-		}
-	}
-	return (1);
+	if (me == 1)
+		return (1);
+	return (0);
 }
 
-int		place(t_filler *datas, int x, int y)
+int		place(t_filler *datas)
 {
+	unsigned int x;
+	unsigned int y;
+
+	x = 0;
+	y = 0;
 	while (y < datas->map_width)
 	{
 		y = 0;
 		while (x < datas->map_height)
 		{
-			check_older_pieces(datas, &x, &y);
-			if (datas->map[y][x] == datas->letter_me)
-				if (can_place(datas, x, y))
-				{
-					ft_putchar(x + 48);
-					ft_putchar(' ');
-					ft_putchar(y + 48);
-					return (1);
-				}
+			if (can_place(datas, x, y))
+			{
+				ft_putchar(x + 48);
+				ft_putchar(' ');
+				ft_putchar(y + 48);
+				return (1);
+			}
 			++y;
 		}
 		++x;

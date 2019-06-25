@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/23 16:22:56 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/25 23:43:04 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define BACKN ft_putchar_fd('\n', 2)
 
 # define B_SIZE 4096
+# define bool int
 
 typedef struct		s_pos
 {
@@ -51,6 +52,8 @@ int			get_pieces(t_filler *datas);
 
 int			parsing_map(t_filler *datas);
 int			parsing_pieces(t_filler *datas);
+
+int			place(t_filler *datas);
 
 void			print_board(char **str);
 void			skip_spaces(char *str, int *i);
