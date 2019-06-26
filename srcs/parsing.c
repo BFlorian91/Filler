@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/23 17:14:30 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/27 00:21:26 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 
 int parsing_map(t_filler *datas)
 {
-	int 			i;
-	unsigned int	x;
-	unsigned int 	y;
-	char	tmp[B_SIZE];
+	int 		i;
+	int			x;
+	int			y;
+	/*char	tmp[B_SIZE];*/
 
 	i = 0;
 	y = 0;
-	ft_strcpy(tmp, ft_strstr(datas->buffer, "000"));
+	STR(datas->line);
+	get_next_line(0, &datas->line);
 	if (!(datas->map = (char **)malloc(sizeof(char *) * (datas->map_height + 1))))
 		return (-1);
 	datas->map[datas->map_height] = 0;
@@ -32,11 +33,12 @@ int parsing_map(t_filler *datas)
 		if (!(datas->map[y] = (char *)malloc(sizeof(char) * (datas->map_width + 1))))
 				return (-1);
 		ft_bzero(datas->map[y], datas->map_height);
-		while (ft_isdigit(tmp[i]) || tmp[i] == ' ')
+		get_next_line(0, &datas->line);
+		while (ft_isdigit(datas->line[i]) || datas->line[i] == ' ')
 			++i;
 		while (x < datas->map_width)
 		{
-			datas->map[y][x] = tmp[i];
+			datas->map[y][x] = datas->line[i];
 			++x;
 			++i;
 		}
@@ -54,8 +56,8 @@ int parsing_map(t_filler *datas)
 int	parsing_pieces(t_filler *datas)
 {
 	int 			i;
-	unsigned int	x;
-	unsigned int	y;
+	int	x;
+	int	y;
 	char			tmp[B_SIZE];
 
 	i = 0;

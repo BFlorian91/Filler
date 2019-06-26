@@ -6,56 +6,42 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 12:35:39 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/25 23:45:48 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/26 19:33:49 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/filler.h"
 
-int		check_first_pieces(t_filler *datas, int *x, int *y)
-{
-	while (datas->map[*y] && datas->map[*y][*x] != datas->letter_me)
-	{
-		++(*x);
-		if (datas->map[*y][*x] == '\0')
-		{
-			*x = 0;
-			++(*y);
-		}
-	}
-	return (1);
-}
-
 int		can_place(t_filler *datas, int x, int y)
 {
-	unsigned int i;
-	unsigned int j;
-	bool me;
+	int i;
+	int j;
+	bool my_player_char;
 
 	j = 0;
-	me = 0;
+	my_player_char = 0;
 	while (j < datas->piece_width)
 	{
 		i = 0;
 		while (i < datas->piece_height)
 		{
+			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_me)
+				++my_player_char;
 			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_enemy)
 				return (0);
-			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_me)
-				++me;
 			++i;
 		}
 		++j;
 	}
-	if (me == 1)
-		return (1);
-	return (0);
+	if (my_player_char != 1)
+		return (0);
+	return (1);
 }
 
 int		place(t_filler *datas)
 {
-	unsigned int x;
-	unsigned int y;
+	int x;
+	int y;
 
 	x = 0;
 	y = 0;
