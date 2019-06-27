@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:43:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/26 23:33:07 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/27 02:31:11 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ int		main(void)
     ft_bzero(datas, sizeof(datas));
 	get_players(datas);
 	get_map(datas);
-			/*get_pieces(datas);*/
+	get_pieces(datas);
 			/*place(datas);*/
-	ft_strdel(&datas->line);
 	STR("\nflbeaumo: Player ");
 	NBR(datas->player);
 	STR("\nflbeaumo letter: ");
