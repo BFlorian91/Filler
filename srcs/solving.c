@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 12:35:39 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/26 19:33:49 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/27 03:12:49 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int		can_place(t_filler *datas, int x, int y)
 
 	j = 0;
 	my_player_char = 0;
-	while (j < datas->piece_width)
+	while (j + y < datas->map_width && j < datas->piece_width)
 	{
 		i = 0;
-		while (i < datas->piece_height)
+		while (i + x < datas->map_height && i < datas->piece_height)
 		{
 			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_me)
 				++my_player_char;
@@ -33,9 +33,7 @@ int		can_place(t_filler *datas, int x, int y)
 		}
 		++j;
 	}
-	if (my_player_char != 1)
-		return (0);
-	return (1);
+	return (my_player_char == 1 ? 1 : 0);
 }
 
 int		place(t_filler *datas)
@@ -43,11 +41,10 @@ int		place(t_filler *datas)
 	int x;
 	int y;
 
-	x = 0;
 	y = 0;
 	while (y < datas->map_width)
 	{
-		y = 0;
+		x = 0;
 		while (x < datas->map_height)
 		{
 			if (can_place(datas, x, y))
@@ -57,9 +54,9 @@ int		place(t_filler *datas)
 				ft_putchar(y + 48);
 				return (1);
 			}
-			++y;
+			++x;
 		}
-		++x;
+		++y;
 	}
 	return (0);
 }

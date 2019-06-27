@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/27 02:34:52 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/27 02:42:44 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int parsing_map(t_filler *datas)
 		ft_strdel(&datas->line);
 	}
 	/* DEBUG */
-	STR("THE MAP PARSE:\n");
-	print_board(datas->map);
+	/*STR("THE MAP PARSE:\n");*/
+	/*print_board(datas->map);*/
 	/* END */
 	/*ft_strdel(&tmp);*/
 	return (1);
@@ -52,12 +52,12 @@ int	parsing_pieces(t_filler *datas)
 		ft_strdel(&datas->line);
 	}
 	/* DEBUG */
-	STR("\n\nTHE PIECE PARSE: ");
-	NBR(datas->piece_height);
-	CHAR(' ');
-	NBR(datas->piece_width);
-	CHAR('\n');
-	print_board(datas->piece);
+	/*STR("\n\nTHE PIECE PARSE: ");*/
+	/*NBR(datas->piece_height);*/
+	/*CHAR(' ');*/
+	/*NBR(datas->piece_width);*/
+	/*CHAR('\n');*/
+	/*print_board(datas->piece);*/
 	/* END */
 	return (1);
 }
