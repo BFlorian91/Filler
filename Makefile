@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/25 23:40:45 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/28 12:43:29 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,9 @@ $(NAME): $(OBJ)
 	@$(CC) $(SRCS) $(LIBFT) -o $@ $(CFLAGS) -I $(HEADER_PATH)
 	@echo "$(GREEN) [ Compile status ]		 [OK] $(NC)"
 
-%.o: %.c 
-	@$(CC) -o $@ -c $< $(CFLAGS)
+%.o: %.c $(LIBFT) 
+	@$(CC) -o $@ -c $< $(CFLAGS) -I $(HEADER_PATH)
+
 	@echo "$(YELLOW)Compiling:$(BLUE) $< 	$(GREEN) [OK] $(NC)"
 
 $(LIBFT):
@@ -63,10 +64,12 @@ $(LIBFT):
 
 clean:
 	@rm -rf $(OBJ) filler_vm maps players filler.trace
+	@make clean -C $(LIB_C_PATH)
 	@echo "$(RED) Remove Object:$(NC)			$(GREEN) [OK] $(NC)" $<
 
 fclean: clean
 	@rm -rf $(NAME)
+	@make fclean -C $(LIB_C_PATH)
 	@echo "$(RED) Remove Binary:$(NC)			$(GREEN) [OK] $(NC)"
 
 re: fclean all

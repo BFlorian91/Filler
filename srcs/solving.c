@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/23 12:35:39 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/27 03:12:49 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/28 12:38:22 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/filler.h"
+#include "filler.h"
 
 int		can_place(t_filler *datas, int x, int y)
 {

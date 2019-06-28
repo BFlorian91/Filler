@@ -6,12 +6,12 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:16:08 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:31 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:17:09 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 int		ft_printf(const char *format, ...)
 {

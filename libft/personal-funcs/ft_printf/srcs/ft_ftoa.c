@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 21:42:49 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:06:08 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:22:45 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static int	get_len_bfr_coma(long double nbr)
 {

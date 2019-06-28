@@ -6,12 +6,12 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 15:16:23 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:06:22 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:25:59 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
-#include "../incs/pf_color.h"
+#include "ft_printf.h"
+#include "pf_color.h"
 
 int		color_to_buff(int x, int i, char *tmp, t_buff *buff)
 {

@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 12:22:15 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/17 08:00:31 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:18:40 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 int		pf_intlen(long long nb)
 {

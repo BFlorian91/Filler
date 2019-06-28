@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 11:28:33 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:09 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:16:46 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static int		ft_get_int(const char *str, t_data *data, int index)
 {

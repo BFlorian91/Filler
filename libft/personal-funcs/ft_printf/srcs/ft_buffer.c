@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 16:00:02 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 21:43:34 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:15:36 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_buffer(char c, t_buff *buff)
 {

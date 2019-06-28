@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 10:07:27 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/16 20:08:43 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:19:13 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static void	str_prec(char *str, int len, t_buff *buff)
 {

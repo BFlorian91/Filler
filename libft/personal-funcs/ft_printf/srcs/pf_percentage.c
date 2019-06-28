@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 03:03:31 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:08:36 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:19:05 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 int		pf_percentage(va_list ap, t_data *data, t_buff *buff)
 {

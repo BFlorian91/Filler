@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 08:35:31 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:08:07 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:18:14 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static void	c_flags(int c, t_data *data, t_buff *buff)
 {

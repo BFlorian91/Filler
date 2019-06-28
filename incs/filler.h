@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/26 19:32:34 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/28 12:36:12 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,34 @@ typedef struct		s_pos
 {
 	int x;
 	int y;
-}					t_pos;
+}			t_pos;
 
 typedef struct		s_filler
 {
-	char			buffer[B_SIZE];
-	char			*line;
-	int				player;
-	char			letter_me;
-	char			letter_enemy;
-	int				map_width;
-	int 			map_height;
-	char			**map;
-	int				piece_width;
-	int				piece_height;
-	char			**piece;
-	t_pos			*pos;
+	char		buffer[B_SIZE];
+	char		*line;
+	int		player;
+	char		letter_me;
+	char		letter_enemy;
+	int		map_width;
+	int 		map_height;
+	char		**map;
+	int		piece_width;
+	int		piece_height;
+	char		**piece;
+	t_pos		*pos;
 
 }					t_filler;
 
-int					get_players(t_filler *datas);
-int					get_map(t_filler *datas);
-int					get_number(char *str, int *i);
-int					get_pieces(t_filler *datas);
+int				get_players(t_filler *datas);
+int				get_map(t_filler *datas);
+int				get_number(char *str, int *i);
+int				get_pieces(t_filler *datas);
 
-int					parsing_map(t_filler *datas);
-int					parsing_pieces(t_filler *datas);
+int				parsing_map(t_filler *datas);
+int				parsing_pieces(t_filler *datas);
 
-int					place(t_filler *datas);
+int				place(t_filler *datas);
 
 void				print_board(char **str);
 void				skip_spaces(char *str, int *i);

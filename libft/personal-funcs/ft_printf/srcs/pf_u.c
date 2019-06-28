@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 18:22:40 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/16 21:38:10 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:19:20 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static void	checkflags_u(t_data *data, t_buff *buff)
 {

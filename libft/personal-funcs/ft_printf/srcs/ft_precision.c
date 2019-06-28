@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 23:34:36 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:19 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:21:58 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static void	conv_x(char x, t_buff *buff)
 {

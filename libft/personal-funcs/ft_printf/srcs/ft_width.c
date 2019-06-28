@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:51:48 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:45 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:17:51 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static void	hashtag_flag(t_data *data, t_buff *buff)
 {

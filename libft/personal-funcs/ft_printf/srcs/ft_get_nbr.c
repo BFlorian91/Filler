@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 09:47:22 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/16 20:06:38 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:20:22 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 long long int		ft_get_nbr(va_list ap, t_data *data)
 {

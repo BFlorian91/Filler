@@ -6,31 +6,30 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/27 02:31:00 by florian          ###   ########.fr       */
+/*   Updated: 2019/06/28 12:37:00 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/filler.h"
+#include "filler.h"
 
 int get_players(t_filler *datas)
 {
-	while (get_next_line(0, &datas->line))
-	{
+	STR("PUTSTR\n");
+		if (!(get_next_line(0, &datas->line)))
+			return (-1);
+	STR("PUTSTR++\n");
 		if (ft_strstr(datas->line, "$$$ exec p1 : [./flbeaumo.filler]"))
 		{
 			datas->player = 1;
 			datas->letter_me = 'O';
 			datas->letter_enemy = 'X';
-			break ;
 		}
 		else
 		{
 			datas->player = 2;
 			datas->letter_me = 'X';
 			datas->letter_enemy = 'O';
-			break ;
 		}
-	}
 	ft_strdel(&datas->line);
 	return (1);
 }

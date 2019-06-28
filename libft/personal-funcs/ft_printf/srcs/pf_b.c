@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 21:24:12 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:50 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:18:06 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 int		pf_b(va_list ap, t_data *data, t_buff *buff)
 {

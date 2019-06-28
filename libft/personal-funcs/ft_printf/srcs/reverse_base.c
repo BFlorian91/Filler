@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 17:34:05 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/16 20:09:00 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:19:36 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static char	*b_neg(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 14:44:35 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/16 20:07:04 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:21:38 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_printf.h"
+#include "ft_printf.h"
 
 static char			val(int nb)
 {

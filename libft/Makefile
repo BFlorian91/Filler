@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/17 09:09:33 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/28 12:32:56 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -16,8 +16,8 @@ SRCS = $(LIB_FUNCS) $(BONUS_FUNCS) $(PERSONAL_FUNCS) $(PRINT_F) $(PRINTF_LIB_UTI
 
 OBJ = $(SRCS:.c=.o)
 
-INC = $(addprefix ./includes/, \
-libft.h get_next_line.h ft_printf.h lib_utils.h \
+INCS = $(addprefix ./includes/, \
+libft.h get_next_line.h ft_printf.h lib_utils.h pf_color.h \
 )
 
 LIB_FUNCS = $(addprefix ./lib-funcs/, \
@@ -54,6 +54,8 @@ pf_itoa.c ft_utoa.c \
 
 CC = gcc
 
+HEADER_PATH = ./includes
+
 CFLAGS = -Wall -Wextra -Werror
 
 NC = 	 \033[0m
@@ -65,18 +67,13 @@ LGREEN = \033[1;32m
 ORANGE = \033[0;33m
 YELLOW = \033[1;33m
 
-all: copy
-
-copy:
-	@echo ./lib-funcs/ ./bonus-funcs/ ./personal-funcs | xargs -n 1 cp $(INC)
-	@make $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $^
-	@ranlib $(NAME)
+	@ar rcs $(NAME) $^
 
 %.o: %.c
-	@$(CC) -o $@ -c $< $(CFLAGS)
+	@$(CC) -o $@ -c $< $(CFLAGS) -I $(HEADER_PATH)
 	@echo "$(GREEN) [OK] $(YELLOW)Compiling:$(LBLUE) $<  	$(NC)"
 
 clean:

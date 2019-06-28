@@ -6,11 +6,11 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 14:21:29 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/23 17:14:37 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:38:34 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/filler.h"
+#include "filler.h"
 
 int		get_number(char *str, int *i)
 {
