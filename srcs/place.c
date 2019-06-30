@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solving.c                                          :+:      :+:    :+:   */
+/*   place.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/23 12:35:39 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 11:50:33 by flbeaumo         ###   ########.fr       */
+/*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
+/*   Updated: 2019/06/30 15:07:00 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,26 @@ int		place(t_filler *datas)
 	int y;
 
 	y = 0;
-	while (y + datas->piece_height < datas->map_height)
+	while (y + datas->piece_height <= datas->map_height)
 	{
 		x = 0;
-		while (x + datas->piece_width < datas->map_width)
+		while (x + datas->piece_width <= datas->map_width)
 		{
 			if (can_place(datas, x, y))
 			{
-				/*STR("y: ");*/
 				ft_putstr(ft_itoa(y));
-				/*ft_putstr_fd(ft_itoa(y), 2);*/
 				ft_putchar(' ');
-				/*STR("x: ");*/
-				/*datas->map[y][x] = '$';*/
 				ft_putstr(ft_itoa(x));
 				ft_putchar('\n');
-				/*ft_putstr_fd(ft_itoa(x), 2);*/
-				/*print_board(datas->map);*/
 				return (1);
 			}
 			++x;
 		}
 		++y;
 	}
-	if (y == datas->map_height && x == datas->map_width)
-	{
-		ft_putstr(0);
-		ft_putchar(' ');
-		ft_putstr(0);
-		ft_putchar('\n');
-	}
+	ft_putchar('0');
+	ft_putchar(' ');
+	ft_putchar('0');
+	ft_putchar('\n');
 	return (0);
 }

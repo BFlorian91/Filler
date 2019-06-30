@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/29 15:35:39 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/30 14:17:30 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ int				place(t_filler *datas);
 
 void				print_board(char **str);
 void				skip_spaces(char *str, int *i);
+
+void				free_tab(char **tab);
 #endif
