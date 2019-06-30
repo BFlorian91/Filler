@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 19:36:56 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/28 12:37:00 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/29 15:10:48 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int get_players(t_filler *datas)
 {
-	STR("PUTSTR\n");
 		if (!(get_next_line(0, &datas->line)))
 			return (-1);
-	STR("PUTSTR++\n");
 		if (ft_strstr(datas->line, "$$$ exec p1 : [./flbeaumo.filler]"))
 		{
 			datas->player = 1;

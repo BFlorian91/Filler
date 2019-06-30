@@ -6,7 +6,7 @@
 #    By: flbeaumo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/15 14:08:19 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/28 12:32:56 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/29 15:06:48 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -78,11 +78,9 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(OBJ)
-	@echo "$(RED) Remove Object:$(NC)			$(GREEN) [OK] $(NC)" $<
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(RED) Remove Binary:$(NC)			$(GREEN) [OK] $(NC)"
 
 re: fclean all
 

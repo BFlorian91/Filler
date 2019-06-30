@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/28 12:43:29 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/06/29 15:06:25 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@cp -R $(RES) .
 	@$(CC) $(SRCS) $(LIBFT) -o $@ $(CFLAGS) -I $(HEADER_PATH)
-	@echo "$(GREEN) [ Compile status ]		 [OK] $(NC)"
+	@echo "\n$(GREEN) [ Compile status ]		 [OK] $(NC)"
 
 %.o: %.c $(LIBFT) 
 	@$(CC) -o $@ -c $< $(CFLAGS) -I $(HEADER_PATH)
-
-	@echo "$(YELLOW)Compiling:$(BLUE) $< 	$(GREEN) [OK] $(NC)"
+	@echo "$(GREEN) [OK] $(YELLOW)Compiling:$(BLUE) $< $(NC)"
 
 $(LIBFT):
 	@make -C $(LIB_C_PATH)

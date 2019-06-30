@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/28 12:36:12 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/29 15:35:39 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@
 # define BACKN ft_putchar_fd('\n', 2)
 
 # define B_SIZE 4096
-# define bool int
+# define TRUE 1
+
+typedef int t_bool;
 
 typedef struct		s_pos
 {
