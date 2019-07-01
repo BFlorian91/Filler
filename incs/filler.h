@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 14:17:30 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/06/30 15:19:33 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,25 @@
 # define B_SIZE 4096
 # define TRUE 1
 
-typedef int t_bool;
+typedef int 	t_bool;
 
-typedef struct		s_pos
-{
-	int x;
-	int y;
-}			t_pos;
-
-typedef struct		s_filler
+typedef struct	s_filler
 {
 	char		buffer[B_SIZE];
 	char		*line;
-	int		player;
+	int			player;
 	char		letter_me;
 	char		letter_enemy;
-	int		map_width;
+	int			map_width;
 	int 		map_height;
 	char		**map;
-	int		piece_width;
-	int		piece_height;
+	int			piece_width;
+	int			piece_height;
 	char		**piece;
-	t_pos		*pos;
+	int			x;
+	int			y;
 
-}					t_filler;
+}				t_filler;
 
 int				get_players(t_filler *datas);
 int				get_map(t_filler *datas);
@@ -58,8 +53,8 @@ int				parsing_pieces(t_filler *datas);
 
 int				place(t_filler *datas);
 
-void				print_board(char **str);
-void				skip_spaces(char *str, int *i);
+void			print_board(char **str);
+void			skip_spaces(char *str, int *i);
 
-void				free_tab(char **tab);
+void			free_tab(char **tab);
 #endif

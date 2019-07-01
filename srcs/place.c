@@ -6,13 +6,13 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 15:07:00 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/01 12:13:39 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static int		can_place(t_filler *datas, int x, int y)
+static int		can_place(t_filler *datas)
 {
 	int 	i;
 	int 	j;
@@ -20,48 +20,80 @@ static int		can_place(t_filler *datas, int x, int y)
 
 	j = 0;
 	my_player_char = 0;
-	while (j + y < datas->map_height && j < datas->piece_height)
+	while (j + datas->y < datas->map_height && j < datas->piece_height)
 	{
 		i = 0;
-		while (i + x < datas->map_width && i < datas->piece_width)
+		while (i + datas->x < datas->map_width && i < datas->piece_width)
 		{
-			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_me)
+			if (datas->piece[j][i] == '*' && datas->map[j + datas->y][i + datas->x] == datas->letter_me)
 				++my_player_char;
-			if (datas->piece[j][i] == '*' && datas->map[j + y][i + x] == datas->letter_enemy)
+			if (datas->piece[j][i] == '*' && datas->map[j + datas->y][i + datas->x] == datas->letter_enemy)
 				return (0);
 			++i;
 		}
 		++j;
 	}
+	/*STR("Character: ");*/
+	/*CHAR(datas->letter_me);*/
+	/*CHAR(' ');*/
+	/*CHAR(datas->letter_enemy);*/
+	/*BACKN;*/
+	/*STR("Size of Piece: y: ");*/
+	/*NBR(datas->piece_width);*/
+	/*STR(" x: ");*/
+	/*NBR(datas->piece_height);*/
+	/*BACKN;*/
+	/*STR("Size of Map: y: ");*/
+	/*NBR(datas->map_width);*/
+	/*STR(" x: ");*/
+	/*NBR(datas->map_height);*/
+	/*BACKN;*/
+	/*STR("y: ");*/
+	/*NBR(datas->y);*/
+	/*STR(" x: ");*/
+	/*NBR(datas->x);*/
+	/*BACKN;*/
+	/*STR("MAP:\n");*/
+	/*STR(datas->map[j]);*/
+	/*BACKN;*/
+	/*BACKN;*/
+	/*BACKN;*/
 	return (my_player_char == 1 ? 1 : 0);
 }
 
 int		place(t_filler *datas)
 {
-	int x;
-	int y;
-
-	y = 0;
-	while (y + datas->piece_height <= datas->map_height)
+	datas->y = 0;
+	while (datas->y + datas->piece_width <= datas->map_width)
 	{
-		x = 0;
-		while (x + datas->piece_width <= datas->map_width)
+		/*STR("Y ??\n");*/
+		/*NBR(datas->piece_width);*/
+		/*CHAR(' ');*/
+		/*NBR(datas->map_width);*/
+		/*BACKN;*/
+		/*NBR(datas->piece_width + datas->y);*/
+		/*BACKN;*/
+		/*BACKN;*/
+		datas->x = 1;
+		while (datas->x + datas->piece_height <= datas->map_height)
 		{
-			if (can_place(datas, x, y))
+			if (can_place(datas))
 			{
-				ft_putstr(ft_itoa(y));
+				ft_putstr(ft_itoa(datas->y));
 				ft_putchar(' ');
-				ft_putstr(ft_itoa(x));
+				ft_putstr(ft_itoa(datas->x));
 				ft_putchar('\n');
 				return (1);
 			}
-			++x;
+			++datas->x;
 		}
-		++y;
+		++datas->y;
 	}
-	ft_putchar('0');
+	datas->y = 0;
+	datas->x = 0;
+	ft_putstr(ft_itoa(datas->y));
 	ft_putchar(' ');
-	ft_putchar('0');
+	ft_putstr(ft_itoa(datas->x));
 	ft_putchar('\n');
 	return (0);
 }
