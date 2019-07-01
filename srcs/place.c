@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/01 18:37:55 by florian          ###   ########.fr       */
+/*   Updated: 2019/07/01 20:06:24 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ static int		can_place(t_filler *datas)
 	/*STR(" x: ");*/
 	/*NBR(datas->piece_height);*/
 	/*BACKN;*/
-	STR("Size of Map: y: ");
-	NBR(datas->map_width);
-	STR(" x: ");
-	NBR(datas->map_height);
-	BACKN;
+	/*STR("Size of Map: y: ");*/
+	/*NBR(datas->map_width);*/
+	/*STR(" x: ");*/
+	/*NBR(datas->map_height);*/
+	/*BACKN;*/
 	/*STR("y: ");*/
 	/*NBR(datas->y);*/
 	/*STR(" x: ");*/
@@ -66,16 +66,16 @@ int		place(t_filler *datas)
 	datas->y = 0;
 	while (datas->y + datas->piece_height <= datas->map_height)
 	{
-		STR("Y ??\n");
-		STR("width x: ");
-		NBR(datas->piece_width);
-		CHAR(' ');
-		STR("height y: ");
-		NBR(datas->map_height);
-		BACKN;
-		NBR(datas->piece_width + datas->y);
-		BACKN;
-		BACKN;
+		/*STR("Y ??\n");*/
+		/*STR("width x: ");*/
+		/*NBR(datas->piece_width);*/
+		/*CHAR(' ');*/
+		/*STR("height y: ");*/
+		/*NBR(datas->map_height);*/
+		/*BACKN;*/
+		/*NBR(datas->piece_width + datas->y);*/
+		/*BACKN;*/
+		/*BACKN;*/
 		datas->y == 0 ? (datas->x = 1) : (datas->x = 0);
 		while (datas->x + datas->piece_width <= datas->map_width)
 		{
