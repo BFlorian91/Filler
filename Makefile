@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/07/01 10:56:48 by flbeaumo         ###   ########.fr        #
+#    Updated: 2019/07/01 16:30:20 by florian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ $(LIBFT):
 	@./filler_vm -f maps/map00 -p1 ./flbeaumo.filler -p2 players/carli.filler
 
 1:
-	@./filler_vm -f maps/map01 -p1 ./flbeaumo.filler -p2 players/superjeannot.filler
+	@./filler_vm -f maps/map01 -p1 players/superjeannot.filler -p2 ./flbeaumo.filler
 
 2:
 	@./filler_vm -f maps/map02 -p1 ./flbeaumo.filler -p2 players/hcao.filler

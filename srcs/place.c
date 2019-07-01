@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/01 12:13:39 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/01 18:37:55 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ static int		can_place(t_filler *datas)
 	/*STR(" x: ");*/
 	/*NBR(datas->piece_height);*/
 	/*BACKN;*/
-	/*STR("Size of Map: y: ");*/
-	/*NBR(datas->map_width);*/
-	/*STR(" x: ");*/
-	/*NBR(datas->map_height);*/
-	/*BACKN;*/
+	STR("Size of Map: y: ");
+	NBR(datas->map_width);
+	STR(" x: ");
+	NBR(datas->map_height);
+	BACKN;
 	/*STR("y: ");*/
 	/*NBR(datas->y);*/
 	/*STR(" x: ");*/
@@ -64,18 +64,20 @@ static int		can_place(t_filler *datas)
 int		place(t_filler *datas)
 {
 	datas->y = 0;
-	while (datas->y + datas->piece_width <= datas->map_width)
+	while (datas->y + datas->piece_height <= datas->map_height)
 	{
-		/*STR("Y ??\n");*/
-		/*NBR(datas->piece_width);*/
-		/*CHAR(' ');*/
-		/*NBR(datas->map_width);*/
-		/*BACKN;*/
-		/*NBR(datas->piece_width + datas->y);*/
-		/*BACKN;*/
-		/*BACKN;*/
-		datas->x = 1;
-		while (datas->x + datas->piece_height <= datas->map_height)
+		STR("Y ??\n");
+		STR("width x: ");
+		NBR(datas->piece_width);
+		CHAR(' ');
+		STR("height y: ");
+		NBR(datas->map_height);
+		BACKN;
+		NBR(datas->piece_width + datas->y);
+		BACKN;
+		BACKN;
+		datas->y == 0 ? (datas->x = 1) : (datas->x = 0);
+		while (datas->x + datas->piece_width <= datas->map_width)
 		{
 			if (can_place(datas))
 			{
@@ -85,9 +87,9 @@ int		place(t_filler *datas)
 				ft_putchar('\n');
 				return (1);
 			}
-			++datas->x;
+			++(datas->x);
 		}
-		++datas->y;
+		++(datas->y);
 	}
 	datas->y = 0;
 	datas->x = 0;
