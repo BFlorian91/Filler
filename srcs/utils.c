@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 14:21:29 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 14:17:50 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/02 10:42:59 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ int		get_number(char *str, int *i)
 	return (value);
 }
 
-void	print_board(char **str)
-{
-	int		x;
-	int 	y;
+/*void	print_board(char **str)*/
+/*{*/
+	/*int		x;*/
+	/*int 	y;*/
 
-	y = 0;
-	while (str[y])
-	{
-		x = 0;
-		while (str[y][x])
-		{
-			ft_putchar_fd(str[y][x], 2);
-			++x;
-		}
-		ft_putchar_fd('\n', 2);
-		++y;
-	}
-}
+	/*y = 0;*/
+	/*while (str[y])*/
+	/*{*/
+		/*x = 0;*/
+		/*while (str[y][x])*/
+		/*{*/
+			/*ft_putchar_fd(str[y][x], 2);*/
+			/*++x;*/
+		/*}*/
+		/*ft_putchar_fd('\n', 2);*/
+		/*++y;*/
+	/*}*/
+/*}*/
 
 void	free_tab(char **tab)
 {

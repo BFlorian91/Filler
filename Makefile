@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/07/01 16:30:20 by florian          ###   ########.fr        #
+#    Updated: 2019/07/02 10:58:35 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,7 @@ $(LIBFT):
 	@./filler_vm -f maps/map01 -p1 players/superjeannot.filler -p2 ./flbeaumo.filler
 
 2:
-	@./filler_vm -f maps/map02 -p1 ./flbeaumo.filler -p2 players/hcao.filler
-
+	@./filler_vm -f maps/map02 -p1 ./flbeaumo.filler -p2 players/carli.filler
 
 clean:
 	@rm -rf $(OBJ) filler_vm maps players filler.trace

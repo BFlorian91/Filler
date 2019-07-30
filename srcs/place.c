@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/01 20:06:24 by florian          ###   ########.fr       */
+/*   Updated: 2019/07/02 11:13:17 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,6 @@ static int		can_place(t_filler *datas)
 		}
 		++j;
 	}
-	/*STR("Character: ");*/
-	/*CHAR(datas->letter_me);*/
-	/*CHAR(' ');*/
-	/*CHAR(datas->letter_enemy);*/
-	/*BACKN;*/
-	/*STR("Size of Piece: y: ");*/
-	/*NBR(datas->piece_width);*/
-	/*STR(" x: ");*/
-	/*NBR(datas->piece_height);*/
-	/*BACKN;*/
-	/*STR("Size of Map: y: ");*/
-	/*NBR(datas->map_width);*/
-	/*STR(" x: ");*/
-	/*NBR(datas->map_height);*/
-	/*BACKN;*/
-	/*STR("y: ");*/
-	/*NBR(datas->y);*/
-	/*STR(" x: ");*/
-	/*NBR(datas->x);*/
-	/*BACKN;*/
-	/*STR("MAP:\n");*/
-	/*STR(datas->map[j]);*/
-	/*BACKN;*/
-	/*BACKN;*/
-	/*BACKN;*/
 	return (my_player_char == 1 ? 1 : 0);
 }
 
@@ -66,16 +41,6 @@ int		place(t_filler *datas)
 	datas->y = 0;
 	while (datas->y + datas->piece_height <= datas->map_height)
 	{
-		/*STR("Y ??\n");*/
-		/*STR("width x: ");*/
-		/*NBR(datas->piece_width);*/
-		/*CHAR(' ');*/
-		/*STR("height y: ");*/
-		/*NBR(datas->map_height);*/
-		/*BACKN;*/
-		/*NBR(datas->piece_width + datas->y);*/
-		/*BACKN;*/
-		/*BACKN;*/
 		datas->y == 0 ? (datas->x = 1) : (datas->x = 0);
 		while (datas->x + datas->piece_width <= datas->map_width)
 		{

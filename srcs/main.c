@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:43:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/01 10:59:12 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/02 10:42:29 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,5 @@ int		main(void)
 			break ;
 	}
 	free(datas);
-	/*STR("flbeaumo: Player ");*/
-	/*NBR(datas->player);*/
-	/*STR("\nflbeaumo letter: ");*/
-	/*CHAR(datas->letter_me);*/
-	/*CHAR('\n');*/
-	/*STR("Map x: ");*/
-	/*NBR(datas->map_width);*/
-	/*BACKN;*/
-	/*STR("Map y: ");*/
-	/*NBR(datas->map_height);*/
-	/*CHAR('\n');*/
     return (0);
 }

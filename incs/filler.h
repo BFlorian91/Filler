@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 15:19:33 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/02 10:44:06 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@
 # define CHAR(x) ft_putchar_fd(x, 2)
 # define BACKN ft_putchar_fd('\n', 2)
 
-# define B_SIZE 4096
 # define TRUE 1
 
 typedef int 	t_bool;
 
 typedef struct	s_filler
 {
-	char		buffer[B_SIZE];
 	char		*line;
 	int			player;
 	char		letter_me;
