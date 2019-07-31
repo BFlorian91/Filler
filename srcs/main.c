@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:43:42 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/02 10:42:29 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/31 11:49:35 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		main(void)
 	{
 		get_map(datas);
 		get_pieces(datas);
+		heat_map(datas);
 		place(datas);
 		free_tab(datas->map);
 		free_tab(datas->piece);
