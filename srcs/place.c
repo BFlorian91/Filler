@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/02 11:13:17 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/31 14:14:43 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,8 @@ int		place(t_filler *datas)
 		{
 			if (can_place(datas))
 			{
-				ft_putstr(ft_itoa(datas->y));
-				ft_putchar(' ');
-				ft_putstr(ft_itoa(datas->x));
-				ft_putchar('\n');
+				heat_map(datas);
+				ft_printf("%s %s\n", ft_itoa(datas->y), ft_itoa(datas->x));
 				return (1);
 			}
 			++(datas->x);
@@ -58,9 +56,6 @@ int		place(t_filler *datas)
 	}
 	datas->y = 0;
 	datas->x = 0;
-	ft_putstr(ft_itoa(datas->y));
-	ft_putchar(' ');
-	ft_putstr(ft_itoa(datas->x));
-	ft_putchar('\n');
+	ft_printf("%s %s\n", ft_itoa(datas->y), ft_itoa(datas->x));
 	return (0);
 }

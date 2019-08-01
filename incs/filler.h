@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/02 10:44:06 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/07/31 11:17:09 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_filler
 	char		**piece;
 	int			x;
 	int			y;
+	int			best_score;
 
 }				t_filler;
 
@@ -49,6 +50,7 @@ int				get_pieces(t_filler *datas);
 int				parsing_map(t_filler *datas);
 int				parsing_pieces(t_filler *datas);
 
+int				heat_map(t_filler *datas);
 int				place(t_filler *datas);
 
 void			print_board(char **str);
