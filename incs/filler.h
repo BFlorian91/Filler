@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/31 11:17:09 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/03 15:26:23 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 # define BACKN ft_putchar_fd('\n', 2)
 
 # define TRUE 1
+# define UP i - 1
+# define DOWN i + 1
+# define LEFT j - 1
+# define RIGHT j + 1
 
 typedef int 	t_bool;
 
@@ -38,7 +42,9 @@ typedef struct	s_filler
 	char		**piece;
 	int			x;
 	int			y;
-	int			best_score;
+	int			optimus_x;
+	int			optimus_y;
+	int			optimus_score;
 
 }				t_filler;
 

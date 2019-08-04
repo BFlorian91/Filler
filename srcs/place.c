@@ -6,11 +6,33 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/31 14:14:43 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/04 18:39:42 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+static int		score_calculator(t_filler *datas)
+{
+	int i;
+	int j;
+	int	score;
+
+	i = 0;
+	score = 0;
+	while (datas->piece[i])
+	{
+		j = 0;
+		while (datas->piece[i][j])
+		{
+			if (datas->piece[i][j] == '*')
+				score += datas->map[datas->y + i][datas->x + j];
+			++j;
+		}
+		++i;
+	}
+	return (score);
+}
 
 static int		can_place(t_filler *datas)
 {
@@ -18,27 +40,33 @@ static int		can_place(t_filler *datas)
 	int 	j;
 	int		my_player_char;	
 
-	j = 0;
+	i = 0;
 	my_player_char = 0;
-	while (j + datas->y < datas->map_height && j < datas->piece_height)
+	while (i + datas->y < datas->map_height && i < datas->piece_height)
 	{
-		i = 0;
-		while (i + datas->x < datas->map_width && i < datas->piece_width)
+		j = 0;
+		while (j + datas->x < datas->map_width && j < datas->piece_width)
 		{
-			if (datas->piece[j][i] == '*' && datas->map[j + datas->y][i + datas->x] == datas->letter_me)
+			if (datas->piece[i][j] == '*' && datas->map[i + datas->y]
+					[j + datas->x] == datas->letter_me)
 				++my_player_char;
-			if (datas->piece[j][i] == '*' && datas->map[j + datas->y][i + datas->x] == datas->letter_enemy)
+			if (datas->piece[i][j] == '*' && datas->map[i + datas->y]
+					[j + datas->x] == datas->letter_enemy)
 				return (0);
-			++i;
+			++j;
 		}
-		++j;
+		++i;
 	}
 	return (my_player_char == 1 ? 1 : 0);
 }
 
 int		place(t_filler *datas)
 {
+	int score;
+
+	score = 0;
 	datas->y = 0;
+	heat_map(datas);
 	while (datas->y + datas->piece_height <= datas->map_height)
 	{
 		datas->y == 0 ? (datas->x = 1) : (datas->x = 0);
@@ -46,16 +74,27 @@ int		place(t_filler *datas)
 		{
 			if (can_place(datas))
 			{
-				heat_map(datas);
-				ft_printf("%s %s\n", ft_itoa(datas->y), ft_itoa(datas->x));
-				return (1);
+				if ((score = score_calculator(datas)) < datas->optimus_score 
+						|| datas->optimus_score == 0)
+				{
+					datas->optimus_score = score;
+					datas->optimus_x = datas->x;
+					datas->optimus_y = datas->y;
+				}
 			}
 			++(datas->x);
 		}
 		++(datas->y);
 	}
-	datas->y = 0;
-	datas->x = 0;
-	ft_printf("%s %s\n", ft_itoa(datas->y), ft_itoa(datas->x));
+	/*STR("OPTIMUS TEAM:\n");*/
+	/*NBR(datas->optimus_y);*/
+	/*NBR(datas->optimus_x);*/
+	/*BACKN;*/
+
+	if (datas->optimus_score == 0)
+		ft_printf("0 0\n");
+	else
+		ft_printf("%s %s\n", ft_itoa(datas->optimus_y),
+				ft_itoa(datas->optimus_x));
 	return (0);
 }

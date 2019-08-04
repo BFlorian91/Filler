@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 14:21:29 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/07/31 14:04:04 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/03 16:24:29 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,8 @@ void	print_board(char **str)
 void	free_tab(char **tab)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (tab[i])
 	{
 		ft_strdel(&tab[i]);
