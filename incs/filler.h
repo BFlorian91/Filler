@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/03 15:26:23 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/05 14:20:14 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct	s_filler
 	int			piece_width;
 	int			piece_height;
 	char		**piece;
+	int			x_without_point;
+	int			y_without_point;
 	int			x;
 	int			y;
 	int			optimus_x;

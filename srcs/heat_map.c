@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 11:20:51 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/05 13:09:31 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/05 17:55:13 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	place_number(t_filler *datas, char score, char previous)
 		}
 		++i;
 	}
-	/*print_board(datas->map);*/
+	print_board(datas->map);
 	return (1);
 }
 
