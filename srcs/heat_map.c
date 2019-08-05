@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 11:20:51 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/04 18:53:09 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/05 13:09:31 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	place_number(t_filler *datas, char score, char previous)
 		}
 		++i;
 	}
-/*print_board(datas->map);*/
+	/*print_board(datas->map);*/
 	return (1);
 }
 
@@ -76,10 +76,11 @@ int			heat_map(t_filler *datas)
 
 	score = 48;
 	place_number(datas, score, datas->letter_enemy);
-	while (!track_is_full(datas))
+	while (!track_is_full(datas) && score < 126)
 	{
-		if (score < 126)
-			++score;
+		
+		place_number(datas, score, (score - 1));
+		++score;
 		if ((score == 'X' || score == 'O' || score == '.') && score < 126)
 		{
 			++score;

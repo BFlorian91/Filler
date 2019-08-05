@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/04 18:39:42 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/05 13:21:40 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,6 @@ int		place(t_filler *datas)
 		}
 		++(datas->y);
 	}
-	/*STR("OPTIMUS TEAM:\n");*/
-	/*NBR(datas->optimus_y);*/
-	/*NBR(datas->optimus_x);*/
-	/*BACKN;*/
-
 	if (datas->optimus_score == 0)
 		ft_printf("0 0\n");
 	else
