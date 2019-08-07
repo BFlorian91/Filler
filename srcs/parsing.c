@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/30 11:14:32 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/06 18:49:59 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,77 @@ int	parsing_pieces(t_filler *datas)
 	/*CHAR('\n');*/
 	/*print_board(datas->piece);*/
 	/* END */
+	return (1);
+}
+
+int	lifting_pieces(t_filler *datas)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	STR("It's ME\n");
+	while (i < datas->piece_height && datas->piece[i][j] != '*')
+	{
+		if (j == datas->piece_width)
+		{
+			j = 0;
+			++i;
+		}
+		++j;
+	}
+	datas->top_skip = i;
+	i = 0;
+	j = 0;
+	STR("MArio\n");
+	while (j < datas->piece_width && datas->piece[i][j] != '*')
+	{
+		if (i == datas->piece_height)
+		{
+			i = 0;
+			++j;
+		}
+		++i;
+	}
+	datas->left_skip = j;
+	i = datas->piece_height;
+	j = datas->piece_width;
+	STR("OLOL\n");
+	while (i > 0 && datas->piece[i][j] != '*')
+	{
+		if (j == 0)
+		{
+			j = datas->piece_width;
+			--i;
+		}
+		--j;
+	}
+	datas->bottom_skip = i;
+	i = datas->piece_height;
+	j = datas->piece_width;
+	while (j > 0 && datas->piece[i][j] != '*')
+	{
+		if (i == 0)
+		{
+			i = datas->piece_height;
+			--j;
+		}
+		--i;
+	}
+	datas->right_skip = j;
+
+	/////////////////////////////////////////////////////////
+	while (i < datas->piece_height - datas->bottom_skip)
+	{
+		j = datas->left_skip;
+		while (j < datas->piece_width - datas->right_skip)
+		{
+			CHAR(datas->piece[i][j]);
+			++j;
+		}
+		++i;
+	}
+	STR("FuCK U\n");
 	return (1);
 }

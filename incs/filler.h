@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/05 14:20:14 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/07 14:52:23 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@
 
 typedef int 	t_bool;
 
+typedef struct	s_point
+{
+	int 	x;
+	int 	y;
+}				t_point;
+
 typedef struct	s_filler
 {
 	char		*line;
@@ -42,11 +48,16 @@ typedef struct	s_filler
 	char		**piece;
 	int			x_without_point;
 	int			y_without_point;
+	int			top_skip;
+	int			bottom_skip;
+	int			left_skip;
+	int			right_skip;
 	int			x;
 	int			y;
 	int			optimus_x;
 	int			optimus_y;
 	int			optimus_score;
+	t_point		pos[8];
 
 }				t_filler;
 
@@ -57,6 +68,7 @@ int				get_pieces(t_filler *datas);
 
 int				parsing_map(t_filler *datas);
 int				parsing_pieces(t_filler *datas);
+int				lifting_pieces(t_filler *datas);
 
 int				heat_map(t_filler *datas);
 int				place(t_filler *datas);

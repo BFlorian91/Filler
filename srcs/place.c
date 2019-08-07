@@ -6,41 +6,44 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/05 18:02:18 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/07 17:43:01 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static void		skip_point(t_filler *datas)
-{
+/*static void		skip_point(t_filler *datas)*/
+/*{*/
 
-	int	i;
-	int	j;
+	/*int	i;*/
+	/*int	j;*/
 
-	j = 0;
-	i = 0;
-	while (j < datas->piece_height && datas->piece[j][i] == '.')
-	{
-		j++;
-		if (j == datas->piece_height)
-		{
-			j = 0;
-			i++;
-		}
-	}
-	datas->x_without_point = i;
-	j = 0;
-	while (i < datas->piece_width && datas->piece[j][i] == '.')
-	{
-		i++;
-		if (i == datas->piece_width)
-		{
-			i = 0;
-			j++;
-		}
-	}
-	datas->y_without_point = j;
+	/*j = 0;*/
+	/*i = 0;*/
+	/*while (j < datas->piece_height && datas->piece[j][i] == '.')*/
+	/*{*/
+		/*j++;*/
+		/*if (j == datas->piece_height)*/
+		/*{*/
+			/*j = 0;*/
+			/*i++;*/
+		/*}*/
+	/*}*/
+	/*datas->x_without_point = i;*/
+	/*j = 0;*/
+	/*while (i < datas->piece_width && datas->piece[j][i] == '.')*/
+	/*{*/
+		/*i++;*/
+		/*if (i == datas->piece_width)*/
+		/*{*/
+			/*i = 0;*/
+			/*j++;*/
+		/*}*/
+	/*}*/
+	/*datas->y_without_point = j;*/
+
+///////////////////////////////////////////////////////////////////////////////////////
+
 	/*int i;*/
 	/*int j;*/
 
@@ -77,8 +80,7 @@ static void		skip_point(t_filler *datas)
 	/*BACKN;*/
 	/*BACKN;*/
 	/*STR("IN THE PLACE\n");*/
-
-}
+/*}*/
 
 static int		score_calculator(t_filler *datas)
 {
@@ -133,19 +135,14 @@ int		place(t_filler *datas)
 	int score;
 
 	score = 0;
-	skip_point(datas);
-	datas->y = -(datas->y_without_point);
+	/*skip_point(datas);*/
+	/*datas->y = -(datas->y_without_point);*/
+	datas->y = 0;
 	heat_map(datas);
-	/* DEBUG */
-	NBR(datas->y_without_point);
-	BACKN;
-	NBR(datas->x_without_point);
-	BACKN;
-	BACKN;
-	/* ********** */
+	/*lifting_pieces(datas);*/
 	while (datas->y + datas->piece_height <= datas->map_height)
 	{
-		datas->x = -(datas->x_without_point);
+		/*datas->x = -(datas->x_without_point);*/
 		datas->y == 0 ? (datas->x = 1) : (datas->x = 0);
 		while (datas->x + datas->piece_width <= datas->map_width)
 		{
