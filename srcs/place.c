@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:06:52 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/07 17:43:01 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/08 14:54:30 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ static int		can_place(t_filler *datas)
 	int 	j;
 	int		my_player_char;	
 
-	i = datas->y_without_point;
+	i = 0;
 	my_player_char = 0;
 	while (i + datas->y < datas->map_height && i < datas->piece_height)
 	{
-		j = datas->x_without_point;
+		j = 0;
 		while (j + datas->x < datas->map_width && j < datas->piece_width)
 		{
 			if (datas->piece[i][j] == '*' && datas->map[i + datas->y]
