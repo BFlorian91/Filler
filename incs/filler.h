@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 07:06:18 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/07 14:52:23 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/09 14:29:53 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int				get_pieces(t_filler *datas);
 
 int				parsing_map(t_filler *datas);
 int				parsing_pieces(t_filler *datas);
-int				lifting_pieces(t_filler *datas);
+int				free_column(t_filler *datas);
+int				free_line(t_filler *datas);
 
 int				heat_map(t_filler *datas);
 int				place(t_filler *datas);

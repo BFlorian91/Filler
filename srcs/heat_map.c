@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 11:20:51 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/08 14:53:37 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/09 15:39:58 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,77 +49,6 @@ static int	place_number(t_filler *datas, char score, char previous)
 	/*print_board(datas->map);*/
 	return (1);
 }
-
-/*static void	init_points_map(t_filler *datas)*/
-/*{*/
-/*int i;*/
-
-/*i = 0;*/
-/*datas->pos[i].y = -1;*/
-/*datas->pos[i++].x = -1;*/
-/*datas->pos[i].y = -1;*/
-/*datas->pos[i++].x = 0;*/
-/*datas->pos[i].y = -1;*/
-/*datas->pos[i++].x = 1;*/
-/*datas->pos[i].y = 0;*/
-/*datas->pos[i++].x = -1;*/
-/*datas->pos[i].y = 0;*/
-/*datas->pos[i++].x = 1;*/
-/*datas->pos[i].y = 1; */
-/*datas->pos[i++].x = -1;*/
-/*datas->pos[i].y = 1;*/
-/*datas->pos[i++].x = 0;*/
-/*datas->pos[i].y = 1;*/
-/*datas->pos[i++].x = 1;*/
-/*}*/
-
-/*static int	place_number(t_filler *datas, char score, char previous)*/
-/*{*/
-/*int		i;*/
-/*int		j;*/
-/*int		point;*/
-
-
-/*i = 1;*/
-/*point = 8;*/
-/*init_points_map(datas);*/
-/*while (i + 1 < datas->map_height)*/
-/*{*/
-/*j = 1;*/
-/*while (j + 1 < datas->map_width)*/
-/*{*/
-/*if (datas->map[i][j] == previous)*/
-/*{*/
-/*while (point >= 0 && datas->map[j + datas->pos[point].y][j + datas->pos[point].x] == '.')*/
-/*{*/
-/*[>STR("\nORIGIN POS ==> \n");<]*/
-/*[>NBR(i);<]*/
-/*[>CHAR(' ');<]*/
-/*[>NBR(j);<]*/
-/*[>BACKN;<]*/
-/*[>STR("\nTEST POS ==> \n");<]*/
-/*[>NBR(i + datas->pos[point].y);<]*/
-/*[>CHAR(' ');<]*/
-/*[>NBR(j + datas->pos[point].x);<]*/
-/*[>BACKN;<]*/
-/*[>STR("VALUES:");<]*/
-/*[>NBR(datas->pos[point].y);<]*/
-/*[>CHAR(' ');<]*/
-/*[>NBR(datas->pos[point].x);<]*/
-/*[>BACKN;<]*/
-/*[>BACKN;<]*/
-/*NBR(point);*/
-/*datas->map[i + datas->pos[point].y][j + datas->pos[point].x] = score;*/
-/*--point;*/
-/*}*/
-/*}*/
-/*++j;*/
-/*}*/
-/*++i;*/
-/*}*/
-/*print_board(datas->map);*/
-/*return (1);*/
-/*}*/
 
 static int	track_is_full(t_filler *datas)
 {

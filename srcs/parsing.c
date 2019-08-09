@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:17:04 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/08/06 18:49:59 by flbeaumo         ###   ########.fr       */
+/*   Updated: 2019/08/09 15:37:17 by flbeaumo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	parsing_pieces(t_filler *datas)
 		ft_strdel(&datas->line);
 		++i;
 	}
+	/*free_column(datas);*/
+	/*free_line(datas);*/
 	/* DEBUG */
 	/*STR("\n\nTHE PIECE PARSE: ");*/
 	/*NBR(datas->piece_height);*/
@@ -65,74 +67,56 @@ int	parsing_pieces(t_filler *datas)
 	return (1);
 }
 
-int	lifting_pieces(t_filler *datas)
-{
-	int i;
-	int j;
+/*int		free_column(t_filler *datas)*/
+/*{*/
+	/*int column;*/
+	/*int j;*/
 
-	i = 0;
-	j = 0;
-	STR("It's ME\n");
-	while (i < datas->piece_height && datas->piece[i][j] != '*')
-	{
-		if (j == datas->piece_width)
-		{
-			j = 0;
-			++i;
-		}
-		++j;
-	}
-	datas->top_skip = i;
-	i = 0;
-	j = 0;
-	STR("MArio\n");
-	while (j < datas->piece_width && datas->piece[i][j] != '*')
-	{
-		if (i == datas->piece_height)
-		{
-			i = 0;
-			++j;
-		}
-		++i;
-	}
-	datas->left_skip = j;
-	i = datas->piece_height;
-	j = datas->piece_width;
-	STR("OLOL\n");
-	while (i > 0 && datas->piece[i][j] != '*')
-	{
-		if (j == 0)
-		{
-			j = datas->piece_width;
-			--i;
-		}
-		--j;
-	}
-	datas->bottom_skip = i;
-	i = datas->piece_height;
-	j = datas->piece_width;
-	while (j > 0 && datas->piece[i][j] != '*')
-	{
-		if (i == 0)
-		{
-			i = datas->piece_height;
-			--j;
-		}
-		--i;
-	}
-	datas->right_skip = j;
+	/*column = 0;*/
+	/*while (column < datas->piece_height)*/
+	/*{*/
+		/*j = 0;*/
+		/*while (j < datas->piece_height)*/
+		/*{*/
+			/*if (datas->piece[column][j] == '*')*/
+			/*{*/
+				/*datas->top_skip = column;*/
+	/*STR("* found\n wiht: ");*/
+	/*NBR(column);*/
+	/*STR(" skipped\n\n");*/
+				/*return (1);*/
+			/*}*/
+			/*++column;*/
+		/*}*/
+	/*}*/
+	/*datas->top_skip = column;*/
+	/*return (1);*/
+/*}*/
 
-	/////////////////////////////////////////////////////////
-	while (i < datas->piece_height - datas->bottom_skip)
-	{
-		j = datas->left_skip;
-		while (j < datas->piece_width - datas->right_skip)
-		{
-			CHAR(datas->piece[i][j]);
-			++j;
-		}
-		++i;
-	}
-	STR("FuCK U\n");
-	return (1);
-}
+/*int		free_line(t_filler *datas)*/
+/*{*/
+	/*int i;*/
+	/*int line;*/
+
+	/*STR("No PROBLEM\n");*/
+	/*i = datas->top_skip;*/
+	/*while (i < datas->piece_height)*/
+	/*{*/
+		/*line = 0;*/
+		/*while (line < datas->piece_width)*/
+		/*{*/
+			/*if (datas->piece[i][line] == '*')*/
+			/*{*/
+				/*datas->left_skip = line;*/
+	/*STR("* found\n with -->: ");*/
+	/*NBR(line);*/
+	/*STR(" skipped\n\n");*/
+				/*return (1);*/
+			/*}*/
+			/*++i;*/
+		/*}*/
+	/*}*/
+	/*datas->left_skip = line;*/
+	/*STR("CRASH\n");*/
+	/*return (1);*/
+/*}*/
